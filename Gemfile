@@ -18,8 +18,15 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+end
+
+group :test, :development do
+  gem 'fabrication'
+  gem 'dirty'
+  gem 'ruby-debug19', require: 'ruby-debug', platform: 'ruby_19'
 end
 
 gem 'jquery-rails'
