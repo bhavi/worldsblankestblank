@@ -1,9 +1,24 @@
-// This is a manifest file that'll be compiled into including all the files listed below.
-// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
-// be included in the compiled file accessible from http://example.com/assets/application.js
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// the compiled file.
-//
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+
+      $(document).ready(function(){
+
+        $("button").click(function(){
+          var button = $(this);
+          var imageId = button.attr('data-image_id');
+          $.ajax({
+            url: "images/" + imageId + "/agree.json",
+            type: 'PUT',
+            contentType: 'application/json',
+            success: function(result) {
+              button.nextAll('input').val(result.votes);
+            }
+       });
+     });
+
+      $("#filter_by").change(function(){
+        var filter = $(this).find(":selected").val();
+        alert(filter);
+        $.post("app/views/images/index.html.erb" , {filtered: filter });
+      });
+   });
+
+

@@ -6,12 +6,19 @@ Feature: User views images with the same topic
 
   - Home page displays images with the same name and description ordered by votes descending. (topic)
 
-  Scenario:
+  # Scenario:
+  #   Given the following images:
+  #     | name | description | url                                                    | votes |
+  #     | baby | heaviest    | http://img230.imageshack.us/img230/39/giantbabyux0.jpg | 2     |
+  #     | baby | heaviest    | http://sheshavingababy.files.wordpress.com/2007/11/050120_brazil_baby_hmed_7ahmedium.jpg| 1     |
+  #   When I am on the home page
+  #   Then I should see the following list:
+  #    | http://img230.imageshack.us/img230/39/giantbabyux0.jpg                                   |
+  #    | http://sheshavingababy.files.wordpress.com/2007/11/050120_brazil_baby_hmed_7ahmedium.jpg |
+
+  Scenario: search
     Given the following images:
       | name | description | url                                                    | votes |
       | baby | heaviest    | http://img230.imageshack.us/img230/39/giantbabyux0.jpg | 2     |
       | baby | heaviest    | http://sheshavingababy.files.wordpress.com/2007/11/050120_brazil_baby_hmed_7ahmedium.jpg| 1     |
-    When I am on the home page
-    Then I should see the following list:
-     | http://img230.imageshack.us/img230/39/giantbabyux0.jpg                                   |
-     | http://sheshavingababy.files.wordpress.com/2007/11/050120_brazil_baby_hmed_7ahmedium.jpg |
+    And I search for an image with "foo" and "bar"

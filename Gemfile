@@ -5,7 +5,8 @@ gem 'haml'
 gem 'decent_exposure'
 gem 'rails', '3.1.1'
 gem 'pg'
-
+gem 'therubyracer'
+gem 'pickler'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
@@ -30,3 +31,4 @@ group :test, :development do
 end
 
 gem 'jquery-rails'
+gem 'bcrypt-ruby', '~> 3.0.0'
