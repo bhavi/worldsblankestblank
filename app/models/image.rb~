@@ -1,0 +1,11 @@
+class Image < ActiveRecord::Base
+validates :name, :description, :url, :presence=> true
+
+
+
+def self.search(search_string)
+  if search
+    Image.where(['name = ?', "%#(search)"])
+  end
+end
+end

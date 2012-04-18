@@ -1,0 +1,9 @@
+Worldsblankestblank::Application.routes.draw do
+
+
+match 'images/:id'=> 'images#index' , :as => 'image_selected'
+resources :images
+
+
+  root :to => 'images#index' 
+end

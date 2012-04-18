@@ -1,0 +1,73 @@
+body{
+    background: #242323;
+    color: #FFFFFF;
+}
+
+ h1{
+    font-family: 'Smokum', 'serif';
+    padding: 10px 10px 10px 10px;
+    text-align:center;
+    text-transform: uppercase;
+}
+
+ p{
+    font-weight:bold;
+}
+
+ ul {
+    list-style-type: none;
+}
+
+ a:link, a:visited {
+    color: #FFFFFF;
+    font-size: 18;
+    font-weight: bold;
+    text-decoration:none;
+    text-transform: capitalize;
+}
+
+ a:hover, a:active {
+    color: #FF00FF;
+    font-size: 18;
+    font-weight: bold;
+    text-decoration:none;
+}
+
+ #left-side {
+    color: #FFFFFF;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    width: 70%;
+}
+  
+ #right-side {
+    color: #FFFFFF;
+    float: right;
+    font-size: 12px;
+    text-align: center;
+    width: 30%;
+}
+
+ #vote {
+  background: #006400;
+  color: #FFFFFF;
+  border: none;
+  height: 20px;
+  width:  100px;
+  margin: 10px;
+  
+}
+
+
+ #val {
+  background: #006400;	
+  color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+}
+
+
+
+
+

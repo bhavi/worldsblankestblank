@@ -1,0 +1,37 @@
+<%= form_tag search_path, :method => 'GET' do %>
+  <%= text_field_tag :description, params[:description] %>
+  <%= text_field_tag :name, params[:name] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<%= link_to "New", new_image_path %>
+
+<div id= "right-side">
+  <div id="filter_by">
+    <%= label_tag "Filter_by" %>
+    <%= select_tag "Filter_by", options_for_select(["Oldest", "Newest"]) %>
+  </div>
+   <ul>
+    <% images.each do |image| %>
+       <li>
+          <%= link_to [image.description, image.name].join(' '), search_path(name: image.name, description: image.description, anchor: "img#{image.id}") %>
+          <%= link_to "Edit", edit_image_path(image) %>
+          <%= link_to "Destroy",image_path(image), :confirm => "r u sure", :method=>:delete %>
+       </li>
+     <% end %>
+ </ul> 
+ </div>
+
+
+ <div id= "left-side">
+   <% for image in images %>
+     <div>
+       <h2><%= [image.description,image.name].join(' ') %><h2>
+       <button type= "button" id="vote" data-image_id="<%= image.id %>">I Agree</button> <br />
+       <input type="text" id="val" value= '<%= image.votes %>' />
+       <%= image_tag(image.url, id: "img#{image.id}") %>
+     </div>
+   <% end %>
+ </div>
+
+
