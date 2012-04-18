@@ -1,3 +1,6 @@
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
 
       $(document).ready(function(){
 
@@ -16,7 +19,7 @@
 
       $("#filter_by").change(function(){
         var filter = $(this).find(":selected").val();
-        alert(filter);
+        // alert(filter);
         $.post("app/views/images/index.html.erb" , {filtered: filter });
       });
    });
